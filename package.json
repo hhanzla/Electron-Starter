@@ -1,0 +1,56 @@
+{
+  "name": "JBerry POS",
+  "version": "1.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon --watch main.js --watch preload.js --exec electron .",
+    "build:win": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^43.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-reload": "^2.0.0-alpha.1",
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9"
+  },
+  "build": {
+    "appId": "com.juiceberry.pos",
+    "productName": "JBerry POS",
+    "artifactName": "${name}-Setup-${version}.${ext}",
+    "files": [
+      "**/*",
+      "!release${/*}",
+      "!admin${/*}",
+      "!vercel${/*}"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "hhanzla",
+        "repo": "JBerry-POS"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "include": "scripts/uninstaller.nsh"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}

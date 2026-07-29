@@ -1,0 +1,57 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Draggable Top Bar for frameless window */
+.top-bar {
+  height: 40px;
+  background-color: #82BF0C; /* Matching logo color */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  -webkit-app-region: drag; /* Makes the top bar draggable */
+}
+
+.top-bar h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.window-controls {
+  -webkit-app-region: no-drag;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #ff4d4d;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
